@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, makeStyles, Typography } from "@material-ui/core";
+import { Button, makeStyles, Typography, Grid, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles({
   btnStyle: {
@@ -8,6 +8,10 @@ const useStyles = makeStyles({
   },
   typoStyle: {
     color: "Blue",
+  },
+  paperStyle: {
+    backgroundColor: "orange",
+    height: "50px",
   },
 });
 
@@ -24,6 +28,31 @@ const MaterialUI: React.FC = () => {
       >
         Hello UI
       </Typography>
+
+      <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <Paper className={classes.paperStyle}>xs=12</Paper>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper className={classes.paperStyle}>xs=6</Paper>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper className={classes.paperStyle}>xs=6</Paper>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Paper className={classes.paperStyle}>xs=3</Paper>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Paper className={classes.paperStyle}>xs=3</Paper>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Paper className={classes.paperStyle}>xs=3</Paper>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <Paper className={classes.paperStyle}>xs=3</Paper>
+        </Grid>
+      </Grid>
+
       <Button className={classes.btnStyle} variant="contained" color="primary">
         primary-contained
       </Button>
@@ -33,6 +62,24 @@ const MaterialUI: React.FC = () => {
       <Button variant="text" color="inherit">
         inherit-text
       </Button>
+
+      <Grid
+        container
+        spacing={1}
+        direction="column"
+        justify="center"
+        alignItems="center"
+      >
+        <Grid item xs={1}>
+          <Paper className={classes.paperStyle}>xs=1</Paper>
+        </Grid>
+        <Grid item xs={1}>
+          <Paper className={classes.paperStyle}>xs=1</Paper>
+        </Grid>
+        <Grid item xs={1}>
+          <Paper className={classes.paperStyle}>xs=1</Paper>
+        </Grid>
+      </Grid>
     </div>
   );
 };
