@@ -80,6 +80,35 @@ const MaterialUI: React.FC = () => {
           <Paper className={classes.paperStyle}>xs=1</Paper>
         </Grid>
       </Grid>
+
+      <Grid container spacing={3} direction="column">
+        <Grid item xs={12} container>
+          <Grid item xs={2}>
+            Demo
+          </Grid>
+          <Grid item xs={8}></Grid>
+          <Grid item xs={2}>
+            text
+          </Grid>
+        </Grid>
+        <Grid item xs={12} container justify="space-around">
+          <Grid item xs={3}>
+            "quia et suscipit\nsuscipit recusandae consequuntur expedita et
+            cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est
+            autem sunt rem eveniet architecto"
+          </Grid>
+          <Grid item xs={3}>
+            "quia et suscipit\nsuscipit recusandae consequuntur expedita et
+            cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est
+            autem sunt rem eveniet architecto"
+          </Grid>
+          <Grid item xs={3}>
+            "quia et suscipit\nsuscipit recusandae consequuntur expedita et
+            cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est
+            autem sunt rem eveniet architecto"
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 };
