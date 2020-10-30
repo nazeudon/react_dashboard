@@ -88,7 +88,7 @@ export const fetchAsyncGet = createAsyncThunk("covid/get", async () => {
 export const fetchAsyncGetDaily = createAsyncThunk(
   "covid/getDaily",
   async () => {
-    const { data } = await axios.get<APIDATADAILY>(`${apiUrl}/daily`);
+    const { data } = await axios.get<APIDATADAILY>(`${apiUrl}daily`);
     return data;
   }
 );
@@ -98,8 +98,9 @@ export const fetchAsyncGetCountry = createAsyncThunk(
   async (country: string) => {
     let dynamicUrl = apiUrl;
     if (country) {
-      dynamicUrl = `${apiUrl}/countries/${country}`;
+      dynamicUrl = `${apiUrl}countries/${country}`;
     }
+    console.log(dynamicUrl);
     const { data } = await axios.get<APIDATA>(dynamicUrl);
     return { data: data, country: country };
   }
