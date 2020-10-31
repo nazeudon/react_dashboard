@@ -1,8 +1,9 @@
 import React, { ChangeEvent } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { NativeSelect, FormControl } from "@material-ui/core";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { fetchAsyncGetDaily } from "../covidSlice";
+import { selectCounties } from "../covidSlice";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -14,24 +15,8 @@ const useStyles = makeStyles((theme) => ({
 const SwitchCountry: React.FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-
-  const countries = [
-    "japan",
-    "china",
-    "us",
-    "france",
-    "italy",
-    "spain",
-    "united kingdom",
-    "germany",
-    "russia",
-    "brazil",
-    "taiwan",
-    "thailand",
-    "new zealand",
-    "sweden",
-    "india",
-  ];
+  const dataCounties = useSelector(selectCounties);
+  const countries = dataCounties.map(({ Slug }) => Slug).sort();
 
   return (
     <FormControl className={classes.formControl}>

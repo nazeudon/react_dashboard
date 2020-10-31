@@ -9,7 +9,11 @@ import {
   Grid,
 } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { selectDaily, fetchAsyncGetDaily } from "../covidSlice";
+import {
+  selectDaily,
+  fetchAsyncGetDaily,
+  fetchAsyncGetCountries,
+} from "../covidSlice";
 import SwitchCountry from "../SwitchCountry/SwitchCountry";
 import Chart from "../Chart/Chart";
 import PieChart from "../PieChart/PieChart";
@@ -30,6 +34,7 @@ const Dashboard: React.FC = () => {
   const daily = useSelector(selectDaily);
 
   useEffect(() => {
+    dispatch(fetchAsyncGetCountries());
     dispatch(fetchAsyncGetDaily("japan"));
   }, [dispatch]);
 
