@@ -16,7 +16,11 @@ const SwitchCountry: React.FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const dataCounties = useSelector(selectCounties);
-  const countries = dataCounties.map(({ Slug }) => Slug).sort();
+  const countries = dataCounties
+    .map(({ Slug }) => Slug)
+    .sort()
+    .filter((country) => country !== "japan");
+  countries.unshift("japan");
 
   return (
     <FormControl className={classes.formControl}>
